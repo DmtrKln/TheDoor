@@ -1,0 +1,1096 @@
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+  width: 100%;
+
+  border-bottom: 1px solid var(--light-grey);
+  background-color: #fafafa;
+
+
+  // &.scrolled {
+
+  //   .header__wrapp {
+  //     border: 1px solid rgba(217, 217, 217, 0.46);
+  //     background-color: #1a1a1a;
+  //     height: 68px;
+
+  //   }
+
+  //   .header__logoWrapp {
+
+  //     border-radius: 0;
+
+  //     border-top-color: rgba(217, 217, 217, 0.46);
+  //     border-bottom-color: rgba(217, 217, 217, 0.46);
+
+  //     height: 68px;
+
+  //     @include mobile {
+  //       border: none;
+  //       height: fit-content;
+
+  //     }
+
+
+  //     img {
+  //       width: 153px;
+
+  //       @include mobile {
+  //         width: 136px;
+  //       }
+  //     }
+
+  //     &::after {
+  //       border-top-color: rgba(217, 217, 217, 0.46);
+  //       border-bottom-color: rgba(217, 217, 217, 0.46);
+  //     }
+  //   }
+
+  //   .header__right {
+
+  //     border-radius: 0;
+
+  //     border-top-color: rgba(217, 217, 217, 0.46);
+  //     border-bottom-color: rgba(217, 217, 217, 0.46);
+
+  //     @include mobile {
+  //       border: none;
+  //     }
+
+  //     &::before {
+  //       border-top-color: rgba(217, 217, 217, 0.46);
+  //       border-bottom-color: rgba(217, 217, 217, 0.46);
+  //     }
+  //   }
+  // }
+
+  &__wrapp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+    gap: 20px;
+
+    z-index: 999999;
+
+    transition: all 0.3s ease;
+
+  }
+
+  &__logoWrapp {
+    height: 68px;
+
+    transition: all 0.3s ease;
+
+    @include mobile {
+      width: 136px;
+    }
+  }
+
+
+  &__right {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 68px;
+
+    transition: all 0.3s ease;
+
+    @include maxdesktop {
+      width: fit-content;
+      padding-left: 40px;
+      gap: 14px;
+    }
+
+    @include mobile {
+      background-color: transparent;
+      height: 56px;
+      padding: 0;
+    }
+
+  }
+
+  &__nav {
+    width: 100%;
+    justify-self: center;
+
+    @include maxdesktop {
+      display: none;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    a {
+      font-family: $font-family;
+      font-weight: 300;
+      font-size: 14px;
+      color: #000;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: var(--red);
+      }
+    }
+  }
+
+  &__contact {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    align-items: center;
+
+  }
+
+
+  &__connect {
+    border-radius: 16px;
+    background: var(--red);
+    padding: 6px 24px;
+    white-space: nowrap;
+    border: 1px solid transparent;
+
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--white);
+
+    transition: all 0.3s ease;
+
+    &:hover {
+      border: 1px solid var(--red);
+      background-color: var(--white);
+      ;
+      color: var(--red);
+    }
+
+    &:active {
+      background-color: var(--grey);
+      ;
+      color: var(--medium-grey);
+      border: 1px solid transparent;
+    }
+
+    @include maxdesktop {
+      display: none;
+    }
+
+  }
+
+  &__cart {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    svg {
+      width: 28px;
+      height: 25px;
+    }
+  }
+
+  &__cartCount {
+    position: absolute;
+    top: 27%;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 5px;
+    border-radius: 20px;
+    background: $pink;
+
+    font-family: $second-family;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1;
+    color: #fff;
+  }
+
+  &__wrappMobile {
+    align-items: center;
+    display: none;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    @include maxdesktop {
+      display: flex;
+    }
+  }
+
+  &__btnMobile {
+    border-radius: 16px;
+    border: 1px solid $pink;
+
+    width: 32px;
+    height: 32px;
+  }
+
+
+  &__burgerIcon {
+    margin: auto;
+    display: none;
+    place-items: center;
+    width: 25px;
+    height: 22px;
+    cursor: pointer;
+    overflow: hidden;
+
+    z-index: 3;
+
+    span {
+      width: 22px;
+      height: 1px;
+      display: block;
+      background-color: #fff;
+      transition: all 0.3s ease;
+      justify-self: end;
+    }
+
+    span:nth-child(1) {
+      width: 11px;
+    }
+
+    span:nth-child(2) {
+      width: 22px;
+    }
+
+    span:nth-child(3) {
+      width: 16px;
+    }
+
+    @include maxdesktop {
+      display: grid;
+    }
+  }
+
+  &__burgerIcon.active {
+    span:nth-child(1) {
+      transform-origin: center center;
+      transform: rotate(-45deg) translate(-20%, 500%);
+      width: 25px;
+    }
+
+    span:nth-child(2) {
+      transform: translateX(40px);
+    }
+
+    span:nth-child(3) {
+      transform-origin: center center;
+      transform: rotate(45deg) translate(-20%, -500%);
+      width: 25px;
+    }
+  }
+
+  &__mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: fixed;
+    top: -300%;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 0 25px 45px;
+    background-color: #1a1a1a;
+
+    transition: top 0.5s ease;
+
+    overflow-y: auto;
+
+    &.active {
+      top: 0;
+    }
+  }
+
+  &__mobileTitle {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 44px;
+
+    gap: 5px;
+
+    h2 {
+      font-weight: 400;
+      font-size: 47px;
+      line-height: 110%;
+      color: #fff;
+    }
+
+    h3 {
+      font-family: $second-family;
+      text-align: center;
+      font-weight: 300;
+      font-size: 19px;
+      line-height: 100%;
+      color: #b8b8b8;
+    }
+  }
+
+  &__mobileTop {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__mobileMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    margin: 102px 0 0 0;
+    gap: 15px;
+
+    li a {
+      font-family: $font-family;
+      font-weight: 300;
+      font-size: 20px;
+      text-align: center;
+      color: #fff;
+
+      &:hover {
+        color: $pink;
+      }
+    }
+  }
+
+  &__mobileContact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 15px;
+
+
+    p,
+    a {
+      font-family: $font-family;
+      font-weight: 300;
+      font-size: 18px;
+      text-align: center;
+      color: #fff;
+    }
+
+    a:hover {
+      color: $pink;
+    }
+  }
+
+  &__mobileSocial {
+    display: flex;
+    position: relative;
+    padding-bottom: 32px;
+    gap: 20px;
+
+    text-align: center;
+    width: fit-content;
+
+  }
+
+  &__mobileCopyright {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-top: 25px;
+
+    p {
+      font-family: $second-family;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 100%;
+      text-align: center;
+      color: #fff;
+    }
+  }
+
+  &__mobileSvg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 40px;
+    width: 40px;
+    height: 40px;
+
+    &:hover {
+      svg path {
+        fill: $pink;
+      }
+    }
+  }
+
+  &__modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100002;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__modalWrapp {
+    position: relative;
+    width: 100%;
+    max-width: 505px;
+    border-radius: 5px;
+    padding: 38px 30px 46px 30px;
+
+    @include mobile {
+      padding: 50px 25px 35px;
+    }
+  }
+
+  .header__modal--success &__modalWrapp {
+    max-width: 505px;
+    min-height: 244px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 78px 68px;
+
+    @include mobile {
+      min-height: 200px;
+      padding: 90px 50px;
+    }
+  }
+
+  &__modalClose {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    svg path {
+      stroke: currentColor;
+    }
+  }
+
+  &__modalTitle {
+    margin-bottom: 30px;
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 110%;
+
+    @include mobile {
+      margin-bottom: 30px;
+    }
+
+    &--center {
+      margin-bottom: 0;
+      text-align: center;
+    }
+  }
+
+  &__modalTitle--success {
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 110%;
+    text-align: center;
+
+    @include mobile {
+      font-size: 30px;
+    }
+  }
+
+  &__modalForm {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  &__modalField {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  &__modalLabel {
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 110%;
+  }
+
+  &__modalInput {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    padding: 10px 16px;
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 110%;
+    outline: none;
+    transition: border-color 0.3s ease;
+
+    &:focus {}
+  }
+
+  .header__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__checkboxInput {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 0;
+    cursor: pointer;
+    transition: background-size 0.15s ease, border-color 0.15s ease;
+  }
+
+  &__checkboxInput::before {
+    content: "";
+    width: 15px;
+    height: 10px;
+    transform: scale(0);
+    transition: transform 0.15s ease;
+    background-color: transparent;
+    clip-path: polygon(13% 50%, 4% 60%, 42% 90%, 100% 14%, 92% 4%, 40% 72%);
+  }
+
+  &__checkboxInput:checked {
+    background-size: 70%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232c2c2c' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7'/%3E%3C/svg%3E");
+  }
+
+  &__checkboxInput:checked::before {
+    transform: scale(1);
+  }
+
+  &__checkboxInput:focus-visible {
+    outline-offset: 2px;
+  }
+
+  &__checkboxLabel {
+    user-select: none;
+
+    font-family: $font-family;
+    font-weight: 300;
+    font-size: 14px;
+
+    a {
+      user-select: none;
+
+      font-family: $font-family;
+      font-weight: 300;
+      font-size: 14px;
+      text-decoration: underline;
+    }
+  }
+
+  &__modalBtn {
+    margin-top: 14px;
+    border-radius: 5px;
+    padding: 20px 20px;
+    font-family: $font-family;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 110%;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:active {
+      background-color: #505050;
+      border-color: #505050;
+    }
+  }
+
+  .cookieBanner {
+    display: flex;
+    gap: 22px;
+    position: fixed;
+    right: 0;
+    top: 80%;
+    padding: 28px 20px 32px 24px;
+    background-color: #1A1A1A;
+    border-radius: 32px;
+    z-index: 9;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 20px;
+
+      top: 70%;
+    }
+
+    p {
+      width: 277px;
+      font-family: $second-family;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 150%;
+      color: #fff;
+
+    }
+
+    button {
+      border-radius: 20px;
+      background-color: $pink;
+      font-family: $second-family;
+      font-weight: 600;
+      font-size: 14px;
+      color: #fff;
+      width: fit-content;
+      padding: 10px 22px;
+      border: 1px solid transparent;
+      transition: .3s all ease;
+
+      @include mobile {
+        padding: 10px 34px;
+      }
+
+      &:hover {
+        border: 1px solid $pink;
+        background-color: #fff;
+        color: $pink;
+      }
+
+      &:active {
+        border: 1px solid transparent;
+        background-color: #646464;
+        color: #fff;
+      }
+    }
+  }
+
+
+  .contactUs__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .25s, visibility .25s;
+    z-index: 100000;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+  }
+
+  .contactUs {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.1);
+    background: #1a1a1a;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    max-height: 660px;
+    overflow-y: auto;
+    max-height: 100vh;
+    width: 90%;
+    max-width: 660px;
+
+    @include mobile {
+      height: 90%;
+    }
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 100001;
+
+    &__wrapp {
+      padding: 40px;
+      position: relative;
+
+      @include mobile {
+        padding: 24px 20px;
+      }
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 15px;
+    }
+
+    &__btn {
+      background-color: $pink;
+      width: 100%;
+      font-family: $font5;
+      font-weight: 700;
+      font-size: 18px;
+      color: #fff;
+      padding: 17px 0;
+      border-radius: 14px;
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+
+      &:hover {
+        border: 2px solid $pink;
+        background-color: #fff;
+        color: $pink;
+
+        @include mobile {
+          border: 1px solid #fff;
+        }
+      }
+
+      &:active {
+        background: $text-grey;
+        color: #fff;
+
+      }
+    }
+
+    &__formTitle {
+      h2 {
+        font-family: $font5;
+        font-weight: 500;
+        font-size: 36px;
+        color: $pink;
+
+        @include mobile {
+          font-size: 26px;
+        }
+      }
+
+      p {
+        font-family: $font5;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 150%;
+        color: #dfdfdf;
+        margin-bottom: 8px;
+
+        @include mobile {
+          margin: 0;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 150%;
+        }
+      }
+    }
+
+    &__cross {
+      cursor: pointer;
+      position: absolute;
+      top: 22px;
+      right: 22px;
+      z-index: 99999;
+
+      @include mobile {
+        top: 16px;
+        right: 16px;
+      }
+    }
+
+    &__group {
+      display: flex;
+      gap: 15px;
+      justify-content: space-between;
+
+      @include maxdesktop {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+
+    &__field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+    }
+
+    &__label {
+      font-family: $font5;
+      font-weight: 600;
+      font-size: 18px;
+      color: #bbb;
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+
+    &__input {
+      font-family: $font5;
+      font-weight: 400;
+      font-size: 18px;
+      color: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 13px 16px;
+      box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.1);
+      background: #1a1a1a;
+
+      @include mobile {
+        font-size: 16px;
+      }
+
+    }
+
+    &__input::placeholder {
+      font-family: $font5;
+      font-weight: 400;
+      font-size: 18px;
+      color: #6f6f6f;
+      ;
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+
+    textarea {
+      font-family: $font5;
+      font-weight: 400;
+      font-size: 18px;
+      color: #fff;
+      padding: 14px 0 104px 16px;
+      height: 140px;
+      overflow: hidden;
+
+      @include mobile {
+        font-size: 16px;
+      }
+
+      &::placeholder {
+        font-family: $font5;
+        font-weight: 400;
+        font-size: 18px;
+        color: #bbb;
+
+        @include mobile {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &.active {
+      display: block;
+    }
+
+    .contactUs__checkbox {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .contactUs__checkboxInput {
+      appearance: none;
+      -webkit-appearance: none;
+      margin: 0;
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      border: 1px solid #fff;
+      border-radius: 8px;
+      background-color: transparent;
+      cursor: pointer;
+      display: grid;
+      place-content: center;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+    }
+
+    &__checkboxInput::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      transform: scale(0);
+      transition: transform 0.15s ease;
+      background-color: transparent;
+      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    }
+
+    &__checkboxInput:checked {
+      background-color: transparent;
+      border-color: #fff;
+    }
+
+    &__checkboxInput:checked::before {
+      transform: scale(1);
+      background-color: #fff;
+    }
+
+    &__checkboxInput:focus-visible {
+      outline-offset: 2px;
+    }
+
+    &__checkboxLabel {
+      color: #fff;
+      user-select: none;
+
+      font-family: $font-family;
+      font-weight: 200;
+      font-size: 14px;
+      color: #fff;
+
+      @include mobile {
+        font-size: 14px;
+      }
+
+      a {
+        font-family: $font-family;
+        font-weight: 200;
+        font-size: 14px;
+        color: #fff;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+
+        @include mobile {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+
+  .success__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .25s, visibility .25s;
+    z-index: 999;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+  }
+
+  .success {
+    display: none;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    inset: 0;
+    z-index: 99999;
+
+    &__wrapp {
+      text-align: center;
+      box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.1);
+      background: #1a1a1a;
+      border: 1px solid #fff;
+      border-radius: 30px;
+      max-width: 660px;
+      max-height: 335px;
+      max-height: 100vh;
+      width: 90%;
+      padding: 70px 0 85px 0;
+      z-index: 9999;
+      position: relative;
+    }
+
+
+    img {
+      width: 220px;
+      margin-bottom: 18px;
+
+      @include mobile {
+        width: 150px;
+      }
+    }
+
+    h2 {
+      font-family: $font-family;
+      font-weight: 500;
+      font-size: 30px;
+      text-align: center;
+      color: $pink;
+
+      @include mobile {
+        font-size: 22px;
+      }
+    }
+
+    &.active {
+      display: flex;
+    }
+
+
+    &__cross {
+      position: absolute;
+      cursor: pointer;
+      top: 35px;
+      right: 40px;
+
+      @include mobile {
+        top: 30px;
+        right: 30px;
+      }
+    }
+  }
+}
+
+
+@include maxdesktop {
+  .header.scrolled:has(.header__mobile.active) .header__right {
+    border: none;
+  }
+
+  .header.scrolled:has(.header__mobile.active) .header__logoWrapp {
+    border: none;
+  }
+}

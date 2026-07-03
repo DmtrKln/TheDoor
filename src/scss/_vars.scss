@@ -1,0 +1,23 @@
+$font-family: "Bounded", sans-serif;
+$second-family: "Montserrat", sans-serif;
+$font3: "Raleway", sans-serif;
+$font5: "Fira Sans", sans-serif;
+
+$pink: #ff4cff;
+$dark-grey: #242424;
+$text-grey: #b3b3b3;
+
+:root {
+  // base
+  --content-width: 1562px;
+  --container-offset: 20px;
+  --container-width: var(--content-width);
+
+  // colors
+  --red: #c6224e;
+  --dark-grey: #252525;
+  --light-grey: #efefef;
+  --medium-grey: #4c4c4c;
+  --grey: #b3b3b3;
+  --white: #fff;
+}

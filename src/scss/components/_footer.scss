@@ -1,0 +1,300 @@
+.footer {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 112px 112px 0 0;
+    padding: 86px 0 110px 0;
+    overflow: hidden;
+
+
+    @include mobile {
+        padding: 70px 0 60px 0;
+    }
+
+    &__imgLeft,
+    &__imgRight {
+        height: 100%;
+        z-index: -1;
+        opacity: 0.7;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__imgLeftMobile,
+    &__imgRightMobile {
+        display: none;
+
+        @include tablet {
+            display: block;
+        }
+    }
+
+    &__imgLeft,
+    &__imgLeftMobile {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &__imgRight,
+    &__imgRightMobile {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &__wrapp {
+        display: flex;
+        gap: 40px;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        @media (max-width: 630px) {
+            gap: 60px;
+            justify-content: center;
+        }
+    }
+
+    &__logo {
+        z-index: 2;
+        cursor: pointer;
+
+        @media (max-width: 630px) {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        img {
+
+            width: 314px;
+
+            @media (max-width: 630px) {
+                width: 142px;
+            }
+        }
+    }
+
+    &__left {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 70px;
+        justify-content: space-between;
+        z-index: 9999;
+
+        @media (max-width: 630px) {
+            gap: 40px;
+        }
+    }
+
+    &__nav,
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        @media (max-width: 630px) {
+            width: 100%;
+        }
+    }
+
+    &__nav {
+
+        @media (max-width: 630px) {
+            gap: 20px;
+        }
+
+        h3 {
+            font-family: $font-family;
+            font-weight: 500;
+            font-size: 22px;
+            line-height: 130%;
+            color: #fff;
+
+            @media (max-width: 630px) {
+                text-align: center;
+            }
+
+            @include mobile {
+                font-size: 18px;
+            }
+        }
+    }
+
+    &__menu {
+
+        @media (max-width: 630px) {
+            text-align: center;
+        }
+
+        li a {
+            font-family: $font-family;
+            font-weight: 300;
+            font-size: 16px;
+            color: #fff;
+            cursor: pointer;
+            z-index: 99;
+
+            &:hover {
+                color: $pink;
+            }
+        }
+    }
+
+    &__contactUs {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        @media (max-width: 630px) {
+            width: 100%;
+        }
+
+    }
+
+    &__contactUsTop {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        @media (max-width: 630px) {
+            text-align: center;
+        }
+
+        h3 {
+            font-family: $font-family;
+            font-weight: 500;
+            font-size: 22px;
+            line-height: 130%;
+            color: #fff;
+
+            text-align: center;
+
+            @include mobile {
+                font-size: 18px;
+            }
+        }
+
+        a {
+            transition: .3s all ease;
+            font-family: $font-family;
+            font-weight: 300;
+            font-size: 16px;
+            color: #fff;
+
+            &:hover {
+                color: $pink;
+            }
+        }
+    }
+
+    &__addressWrapp {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        z-index: 99;
+
+        @media (max-width: 630px) {
+            width: 100%;
+            justify-content: center;
+            gap: 50px;
+        }
+    }
+
+    &__address,
+    &__development {
+        font-family: $font-family;
+        font-weight: 500;
+        line-height: 120%;
+        color: rgba(255, 255, 255, 0.9);
+
+        @media (max-width: 630px) {
+            text-align: center;
+        }
+
+        @include mobile {
+            font-size: 16px;
+        }
+    }
+
+    &__address {
+        font-size: 16px;
+    }
+
+    &__development {
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.9);
+        transition: .3s all ease;
+
+        &:hover {
+            color: $pink;
+        }
+
+        @include mobile {
+            font-size: 16px;
+        }
+    }
+
+    &__addressTop {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        h3 {
+            font-family: $font-family;
+            font-weight: 500;
+            font-size: 22px;
+            line-height: 130%;
+            color: #fff;
+
+            @media (max-width: 630px) {
+                text-align: center;
+            }
+
+            @include mobile {
+                font-size: 18px;
+            }
+        }
+
+        p {
+            font-family: $font-family;
+            font-weight: 300;
+            font-size: 16px;
+            color: #fff;
+        }
+    }
+
+    &__social {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+
+        @media (max-width: 630px) {
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        svg {
+
+            cursor: pointer;
+
+            path {
+                transition: .3s all ease;
+            }
+
+
+            &:hover {
+                path {
+                    fill: $pink
+                }
+
+            }
+
+        }
+
+    }
+}
