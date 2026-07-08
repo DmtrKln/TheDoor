@@ -519,10 +519,10 @@
 }
 
 .catalog {
-  margin: 100px 0;
+  margin: 100px 0 0 0;
 
   @include mobile {
-    margin: 60px 0;
+    margin: 60px 0 0 0;
   }
 
   h2 {
@@ -559,8 +559,6 @@
       display: block;
     }
 
-    // сбрасываем «плиточную» раскладку — эти же классы
-    // переиспользуются как swiper-wrapper / swiper-slide
     .catalog__right {
       flex-wrap: nowrap;
       gap: 0;
@@ -606,6 +604,7 @@
     }
 
     @include mobile {
+      height: 340px;
       width: 100%;
     }
   }
@@ -676,6 +675,7 @@
       color: rgba(255, 255, 255, 0.8);
 
       @include mobile {
+        max-width: 154px;
         font-size: 13px;
       }
     }
@@ -685,6 +685,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
     border: 1px solid var(--white);
     border-radius: 22px;
     width: 44px;
@@ -702,7 +706,7 @@
   margin-top: 120px;
 
   @include mobile {
-    margin-bottom: 60px;
+    margin-top: 60px;
   }
 
   &__wrapp {
@@ -721,26 +725,27 @@
 
   .swiper-pagination {
     position: relative;
+
+    margin-top: 35px;
+
+    @include mobile {
+      margin-top: 22px;
+    }
   }
 
-  .swiper-slide-prev,
-  .swiper-slide-next {
-    opacity: 1.1;
-  }
-
-  --swiper-pagination-bullet-size: 30px;
-  --swiper-pagination-bullet-horizontal-gap: 6px;
-  --swiper-pagination-color: #fff;
-  --swiper-pagination-bullet-inactive-color: #5c5c5c;
+  --swiper-pagination-bullet-size: 14px;
+  --swiper-pagination-bullet-horizontal-gap: 5px;
+  --swiper-pagination-color: #d9d9d9;
+  --swiper-pagination-bullet-inactive-color: rgba(217, 217, 217, 0.19);
   --swiper-pagination-bullet-inactive-opacity: 1;
 
   @include mobile {
-    --swiper-pagination-bullet-size: 22px;
+    --swiper-pagination-bullet-size: 11px;
   }
 
   .swiper-pagination-bullet-active-prev,
   .swiper-pagination-bullet-active-next {
-    background-color: #000;
+    background: rgba(217, 217, 217, 0.46);
   }
 
   &__top {
@@ -760,7 +765,7 @@
       }
     }
 
-    p {
+    a {
       font-family: "Bounded", sans-serif;
       font-weight: 300;
       font-size: 16px;
@@ -857,39 +862,62 @@
     display: flex;
     gap: 12px;
     margin-bottom: 38px;
+    overflow: auto;
+  }
 
-    button {
-      padding: 12px 24px;
-      border: 1px solid #e5e7eb;
-      background-color: #fff;
-      border-radius: 100px;
+  &__tab {
+    padding: 12px 24px;
+    border: 1px solid #e5e7eb;
+    background-color: #fff;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
 
-      font-family: "Montserrat", sans-serif;
-      font-weight: 500;
-      font-size: 16px;
-      color: #111827;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #111827;
 
-      &:active {
-        background-color: var(--red);
-        color: #fff;
-      }
+    &.active {
+      background-color: var(--red);
+      border-color: var(--red);
+      color: #fff;
     }
   }
 
-  &__cards {
-    display: flex;
+  &__panel {
+    display: none;
     gap: 32px;
+
+    &.active {
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 
   &__card {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding: 24px;
     box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
     background: var(--white);
     border-radius: 12px;
     gap: 40px;
     width: calc(50% - 16px);
+
+    &:last-child:nth-child(odd) {
+      width: 100%;
+
+      .project__img {
+        max-width: none;
+        width: 100%;
+      }
+    }
+    @include tablet {
+      width: 100%;
+    }
   }
 
   &__top {
@@ -900,13 +928,21 @@
 
   &__img {
     max-width: 716px;
+    height: 240px;
     aspect-ratio: 716 / 240;
 
     border-radius: 8px;
+
+    @include tablet {
+      max-width: none;
+    }
   }
 
   &__type {
     padding: 4px 10px;
+    background: rgba(198, 34, 78, 0.05);
+    border-radius: 4px;
+    width: fit-content;
 
     font-family: "Inter", sans-serif;
     font-weight: 700;
@@ -946,12 +982,6 @@
     gap: 12px;
   }
 
-  &__desc {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
   &__task,
   &__solution {
     display: flex;
@@ -972,5 +1002,250 @@
       line-height: 150%;
       color: #4b5563;
     }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      color: #4b5563;
+      padding: 6px 12px;
+
+      background: #f3f4f6;
+      border-radius: 6px;
+    }
+
+    a {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--white);
+
+      padding: 10px 16px;
+      background: var(--red);
+      border-radius: 16px;
+    }
+  }
+
+  //нижняя половина
+
+  &__calc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 22px;
+    gap: 16px;
+
+    border-radius: 12px;
+    background: var(--dark-grey);
+    padding: 32px 40px;
+
+    @include tablet {
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @include mobile {
+      padding: 24px;
+      gap: 10px;
+    }
+
+    p {
+      font-family: "Bounded", sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      color: var(--white);
+
+      @include mobile {
+        font-weight: 400;
+      }
+    }
+
+    button {
+      font-family: "Bounded", sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--white);
+
+      background: var(--red);
+      padding: 18px 32px;
+      border-radius: 8px;
+
+      @include mobile {
+        font-size: 14px;
+        padding: 16px;
+      }
+    }
+  }
+}
+
+.bid {
+  margin-top: 120px;
+
+  @include mobile {
+    margin-top: 60px;
+  }
+  &__wrapp {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  &__left {
+    width: calc(50% - 20px);
+
+    border-radius: 16px;
+    border: none;
+    height: 100%;
+  }
+
+  &__right {
+    width: calc(50% - 20px);
+
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.05);
+    background: var(--white);
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 32px;
+
+    @include mobile {
+      gap: 16px;
+      padding: 16px;
+    }
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include mobile{
+      gap: 16px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include mobile {
+      gap: 12px;
+    }
+  }
+
+  &__formTitle {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    h4 {
+      font-family: "Bounded", sans-serif;
+      font-weight: 500;
+      font-size: 24px;
+      color: #111827;
+    }
+
+    p {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #6b7280;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    label {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #374151;
+    }
+
+    input {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: #374151;
+
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      border-radius: 8px;
+      padding: 16px;
+
+      &::placeholder {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        color: #9ca3af;
+      }
+    }
+
+    textarea {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: #374151;
+
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 16px;
+
+      &::placeholder {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        color: #9ca3af;
+      }
+    }
+  }
+
+  &__checkbox {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__checkboxInput {
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+  }
+
+  &__checkboxLabel,
+  a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #4b5563;
+  }
+
+  &__btn {
+    box-shadow: 0 10px 20px -8px rgba(17, 24, 39, 0.15);
+    background: var(--red);
+    border-radius: 8px;
+
+    font-family: "Bounded", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--white);
+
+    width: 100%;
+    padding: 16px 20px;
   }
 }
