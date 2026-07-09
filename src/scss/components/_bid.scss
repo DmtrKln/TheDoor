@@ -1,0 +1,245 @@
+.bid {
+  margin-top: 120px;
+
+  @include mobile {
+    margin-top: 60px;
+  }
+  &__wrapp {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  &__left {
+    width: calc(50% - 20px);
+
+    border-radius: 16px;
+    border: none;
+    height: auto;
+
+    @include tablet {
+      height: 412px;
+      width: 100%;
+    }
+  }
+
+  &__right {
+    width: calc(50% - 20px);
+
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.05);
+    background: var(--white);
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 32px;
+
+    @include tablet {
+      width: 100%;
+    }
+
+    @include mobile {
+      gap: 16px;
+      padding: 16px;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include mobile {
+      gap: 16px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include mobile {
+      gap: 12px;
+    }
+  }
+
+  &__formTitle {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    h4 {
+      font-family: "Bounded", sans-serif;
+      font-weight: 500;
+      font-size: 24px;
+      color: #111827;
+    }
+
+    p {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #6b7280;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    label {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #374151;
+    }
+
+    input {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: #374151;
+
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      border-radius: 8px;
+      padding: 16px;
+
+      &::placeholder {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        color: #9ca3af;
+      }
+    }
+
+    textarea {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: #374151;
+
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      border-radius: 8px;
+      padding: 16px;
+
+      &::placeholder {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        color: #9ca3af;
+      }
+    }
+  }
+
+  &__checkbox {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__checkboxInput {
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+  }
+
+  &__checkboxLabel,
+  a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #4b5563;
+  }
+
+  &__btn {
+    box-shadow: 0 10px 20px -8px rgba(17, 24, 39, 0.15);
+    background: var(--red);
+    border-radius: 8px;
+
+    font-family: "Bounded", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--white);
+
+    width: 100%;
+    padding: 16px 20px;
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+
+    @include mobile {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__checkboxInput {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    transition:
+      background-color 0.15s ease,
+      border-color 0.15s ease;
+  }
+
+  &__checkboxInput::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    transform: scale(0);
+    transition: transform 0.15s ease;
+    background-color: transparent;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  }
+
+  &__checkboxInput:checked {
+    background-color: transparent;
+    border-color: #000;
+  }
+
+  &__checkboxInput:checked::before {
+    transform: scale(1);
+    background-color: #000;
+  }
+
+  &__checkboxInput:focus-visible {
+    outline-offset: 2px;
+  }
+
+  &__checkboxLabel {
+    user-select: none;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #4b5563;
+
+    a {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #4b5563;
+    }
+  }
+}

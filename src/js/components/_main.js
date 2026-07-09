@@ -16,7 +16,7 @@ if (document.querySelector(".bannert__swiper")) {
 const desc = document.querySelectorAll(".bannert__desc");
 
 const findHeight = (titles) => {
-  let maxP = titles[0].offsetHeight;
+  let maxP = titles[0]?.offsetHeight ?? 0;
   titles.forEach((e) => {
     if (maxP < e.offsetHeight) maxP = e.offsetHeight;
   });
@@ -95,4 +95,3 @@ document.addEventListener("click", (e) => {
     .querySelectorAll(`.${block}__swiperMobile, .${block}__panel`)
     .forEach((p) => p.classList.toggle("active", p.dataset.panel === target));
 });
-
