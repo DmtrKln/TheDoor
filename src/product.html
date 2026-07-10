@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ru" class="page">
+  @include('partials/head.html')
+
+  <body class="page__body">
+    <div class="site-container">
+      @include('partials/header.html')
+      <main class="main">
+        <section class="product">
+          <div class="container">
+            <nav class="product__breadcrumbs">
+              <a href="index.html">Главная</a>
+              <svg
+                width="19"
+                height="11"
+                viewBox="0 0 19 11"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.5 10.5L18.5 5.5L13.5 0.5M18.5 5.5H0.5"
+                  stroke="#B3B3B3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <a href="delivery.html">Каталог</a>
+              <svg
+                width="19"
+                height="11"
+                viewBox="0 0 19 11"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.5 10.5L18.5 5.5L13.5 0.5M18.5 5.5H0.5"
+                  stroke="#B3B3B3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <a href="delivery.html">KAPELLI classic Гладкая</a>
+            </nav>
+            <div class="product__wrapp">
+              <div class="product__gallery active" data-panel="white">
+                <div
+                  class="product__cardgalleryMain"
+                  data-fancybox="products"
+                  data-src="img/main/mainImgGallery.png"
+                >
+                  <img src="img/main/mainImgGallery.png" alt="" />
+                </div>
+                <div class="product__galleryGroup">
+                  <div
+                    class="product__cardgallery"
+                    data-fancybox="products"
+                    data-src="img/main/firstImgGallery.png"
+                  >
+                    <img src="img/main/firstImgGallery.png" alt="" />
+                  </div>
+                  <div
+                    class="product__cardgallery"
+                    data-fancybox="products"
+                    data-src="img/main/secondImgGallery.png"
+                  >
+                    <img src="img/main/secondImgGallery.png" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="product__right">
+                <div class="product__top">
+                  <h1>KAPELLI CLASSIC ГЛАДКАЯ</h1>
+                  <div class="product__tabs">
+                    <button
+                      class="product__tab btn-reset active"
+                      type="button"
+                      data-tab="white"
+                    >
+                      <span
+                        class="product__swatch"
+                        style="background-image: url()"
+                      ></span>
+                      <span class="product__name">Белый</span>
+                    </button>
+                    <button
+                      class="product__tab btn-reset"
+                      type="button"
+                      data-tab="wenge"
+                    >
+                      Венге
+                    </button>
+                    <button
+                      class="product__tab btn-reset"
+                      type="button"
+                      data-tab="ash"
+                    >
+                      ясень
+                    </button>
+                    <button
+                      class="product__tab btn-reset"
+                      type="button"
+                      data-tab="oak"
+                    >
+                      Дуб
+                    </button>
+                    <button
+                      class="product__tab btn-reset"
+                      type="button"
+                      data-tab="gray"
+                    >
+                      Серый
+                    </button>
+                    <button
+                      class="product__tab btn-reset"
+                      type="button"
+                      data-tab="nut"
+                    >
+                      Орех
+                    </button>
+                    <button
+                      class="product__tab btn-reset"
+                      type="button"
+                      data-tab="black"
+                    >
+                      Черный
+                    </button>
+                  </div>
+                </div>
+                <button class="btn-reset">УТОЧНИТЬ СТОИМОСТЬ</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="specs">
+          <div class="container">
+            <div class="specs__wrapp">
+              <div class="specs__title">
+                <h2>Технические характеристики</h2>
+                <p>
+                  Подробные параметры конструкции, комплектации и дополнений для
+                  дверного полотна.
+                </p>
+              </div>
+              <div class="specs__desc">
+                <div class="specs__main">
+                  <div class="specs__block">
+                    <h3 class="specs__blockTitle">Конструкция и материалы</h3>
+                    <table class="specs__table">
+                      <thead>
+                        <tr>
+                          <th>Параметр</th>
+                          <th>Описание</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Тип конструкции</td>
+                          <td>Сэндвич</td>
+                        </tr>
+                        <tr>
+                          <td>Внутреннее наполнение</td>
+                          <td>Пенополистирол</td>
+                        </tr>
+                        <tr>
+                          <td>Усиление каркаса</td>
+                          <td>LVL-брус и ДПК-брус</td>
+                        </tr>
+                        <tr>
+                          <td>Облицовка</td>
+                          <td>Компактный ПВХ-лист (1,5 мм)</td>
+                        </tr>
+                        <tr>
+                          <td>Оформление торцов</td>
+                          <td>Кромочная ПВХ-лента (1,5 мм)</td>
+                        </tr>
+                        <tr>
+                          <td>Дверная коробка</td>
+                          <td>Телескопическая (экструдированный ПВХ)</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="specs__aside">
+                  <div class="specs__size">
+                    <h3>Доступные размеры</h3>
+                    <div class="specs__blockSize">
+                      <p>600×38×2000 мм</p>
+                      <p>700×38×2000 мм</p>
+                      <p>800×38×2000 мм</p>
+                      <p>900×38×2000 мм</p>
+                    </div>
+                    <p class="specs__sizeDesc">
+                      Возможно изготовление дверных полотен с нестандартными
+                      размерами под ваш индивидуальный проект.
+                    </p>
+                  </div>
+                  <div class="specs__components">
+                    <h3>Фурнитура и комплектующие</h3>
+                    <div class="specs__componentsDesc">
+                      <div class="specs__componentsLeft">
+                        <h4>Рекомендуемая фурнитура</h4>
+                        <ul>
+                          <li>Петли накладные (не требуют врезки)</li>
+                          <li>Замок (магнитный или механический на выбор)</li>
+                          <li>Ручка нажимная</li>
+                        </ul>
+                      </div>
+                      <div class="specs__componentsRight">
+                        <h4>
+                          Дополнительные элементы (приобретаются отдельно)
+                        </h4>
+                        <ul>
+                          <li>Наличники</li>
+                          <li>Порог</li>
+                          <li>Доборный элемент</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="specs__bottom">
+                <h3>Базовый комплект</h3>
+                <ul>
+                  <li>
+                    Дверное полотно (с заводской зарезкой под замок и отверстие
+                    для ручки)
+                  </li>
+                  <li>Дверная коробка (зарезана и собрана в размер полотна)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        @include('partials/bid.html')
+      </main>
+      @include('partials/footer.html')
+    </div>
+  </body>
+</html>

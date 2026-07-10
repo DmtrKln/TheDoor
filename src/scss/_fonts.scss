@@ -13,7 +13,25 @@
   font-family: "Montserrat";
   src: local("Montserrat Regular"), local("Montserrat-Regular"),
     url("../fonts/Montserrat-Regular.woff2");
-  font-weight: 500;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"),
+    url("../fonts/Montserrat-SemiBold.woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat Bold"), local("Montserrat-Bold"),
+    url("../fonts/Montserrat-Bold.woff2");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
