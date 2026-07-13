@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru" class="page">
+  @include('partials/head.html')
+
+  <body class="page__body">
+    <div class="site-container">
+      @include('partials/header.html')
+
+      <main class="main">
+        <section class="notFound">
+          <div class="notFound__cube"></div>
+          <div class="notFound__cube"></div>
+          <div class="container">
+            <div class="notFound__wrapp">
+              <div class="notFound__title">
+                <h1>404</h1>
+                <h2 class="notFound__subtitle">Страница не найдена</h2>
+              </div>
+              <div class="notFound__content">
+                <p class="notFound__desc">
+                  К сожалению, запрашиваемая страница не существует или была
+                  удалена.
+                </p>
+                <a href="index.html#home" class="notFound__btn">На главную</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

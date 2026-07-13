@@ -1,0 +1,116 @@
+.notFound {
+  padding: 302px 0;
+
+  @include mobile {
+    padding: 140px 0 96px 0;
+  }
+  position: relative;
+  &__cube {
+    position: absolute;
+
+    border-radius: 200px;
+    width: 1000px;
+    height: 754px;
+
+    background: var(--red);
+    opacity: 0.02;
+
+    &:nth-child(1) {
+      right: 60%;
+      top: 30%;
+    }
+
+    &:nth-child(2) {
+      left: 60%;
+      bottom: 35%;
+    }
+  }
+
+  &__wrapp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    @include mobile {
+      gap: 8px;
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    @include mobile {
+      gap: 12px;
+    }
+    h1 {
+      font-family: "Bounded", sans-serif;
+      font-weight: 700;
+      font-size: 240px;
+      line-height: 90%;
+      color: var(--red);
+
+      @include tablet {
+        font-size: 200px;
+      }
+
+      @include mobile {
+        font-size: 123px;
+      }
+    }
+
+    h2 {
+      font-family: "Bounded", sans-serif;
+      font-weight: 500;
+      font-size: 48px;
+      text-align: center;
+      color: var(--dark-grey);
+
+      @include tablet {
+        font-size: 40px;
+      }
+      @include mobile {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+
+    @include mobile {
+      gap: 22px;
+    }
+  }
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
+    color: var(--medium-grey);
+  }
+
+  &__btn {
+    font-family: "Bounded", sans-serif;
+    font-weight: 566;
+    font-size: 16px;
+    color: var(--white);
+
+    box-shadow: 0 8px 16px -4px rgba(198, 34, 78, 0.2);
+    background: var(--red);
+    border-radius: 16px;
+    width: fit-content;
+    padding: 18px 48px;
+  }
+}

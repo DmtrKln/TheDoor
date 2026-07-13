@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru" class="page">
+  @include('partials/head.html')
+
+  <body class="page__body">
+    <div class="site-container">
+      @include('partials/header.html')
+      <main class="main">
+        <section class="article">
+          <div class="container">
+            <nav class="article__breadcrumbs">
+              <a href="index.html">Главная</a>
+              <svg
+                width="19"
+                height="11"
+                viewBox="0 0 19 11"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.5 10.5L18.5 5.5L13.5 0.5M18.5 5.5H0.5"
+                  stroke="#B3B3B3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <a href="article.html">Полезная информация</a>
+            </nav>
+            <div class="article__wrapp">
+              <h1>Полезная информация</h1>
+              <div class="article__cards">
+                <div class="article__card">
+                  <img
+                    src="img/main/cardInfo1.png"
+                    alt=""
+                    class="article__imgCard"
+                  />
+                  <div class="article__right">
+                    <div class="article__cardTop">
+                      <h3>Медицинские двери для больниц и поликлиник</h3>
+                      <p>
+                        Объекты здравоохранения, к которым относятся городские и
+                        районные больницы, стационары, санатории, дома отдыха,
+                        частные клиники периодически обновляют внутреннюю
+                        отделку помещений, при этом возникает потребность в
+                        замене межкомнатных дверей. Двери в таких учреждениях
+                        меняют по причине износа, либо в случае, если они не
+                        соответствуют требованиям предъявляемым к медицинским
+                        дверям.
+                      </p>
+                    </div>
+                    <div class="article__cardBottom">
+                      <p>27.04.2025</p>
+                      <a href="#">ЧИТАТЬ</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="article__btn hidden btn-reset">
+                Показать больше
+              </button>
+            </div>
+          </div>
+        </section>
+        @include('partials/bid.html')
+      </main>
+      @include('partials/footer.html')
+    </div>
+  </body>
+</html>

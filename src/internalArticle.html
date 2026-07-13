@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru" class="page">
+  @include('partials/head.html')
+
+  <body class="page__body">
+    <div class="site-container">
+      @include('partials/header.html')
+      <main class="main">
+        <section class="internalArticle">
+          <div class="container">
+            <nav class="internalArticle__breadcrumbs">
+              <a href="index.html">Главная</a>
+              <svg
+                width="19"
+                height="11"
+                viewBox="0 0 19 11"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.5 10.5L18.5 5.5L13.5 0.5M18.5 5.5H0.5"
+                  stroke="#B3B3B3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <a href="delivery.html">Каталог</a>
+              <svg
+                width="19"
+                height="11"
+                viewBox="0 0 19 11"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.5 10.5L18.5 5.5L13.5 0.5M18.5 5.5H0.5"
+                  stroke="#B3B3B3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <a href="delivery.html">KAPELLI classic Гладкая</a>
+            </nav>
+            <div class="internalArticle__wrapp">
+              <div class="internalArticle__title">
+                <h1>Влагостойкие двери Kapelli</h1>
+                <p>
+                  Влагостойкие двери KAPELLI незаменимы везде, где существуют
+                  повышенные требования к характеристикам влагостойкости, тепло-
+                  и звукоизоляции
+                </p>
+              </div>
+              <div class="internalArticle__cards">
+                <div class="internalArticle__card">
+                  <div class="internalArticle__cardleft">
+                    <img src="img/main/doorClassicSmooth.png" alt="" />
+                  </div>
+                  <div class="internalArticle__cardRight">
+                    <div class="internalArticle__desc">
+                      <div class="internalArticle__interiorCard">
+                        <p class="internalArticle__interiorCardLeft">1</p>
+                        <div class="internalarticle__interiorCardRight">
+                          <h3>100% Влагостойкость</h3>
+                          <p>
+                            Благодаря уникальным свойствам и специально
+                            разработанной технологии производства, двери
+                            абсолютно непроницаемы для пара, не деформируются и
+                            сохраняют геометрию во влажных и неотапливаемых
+                            помещениях.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="internalArticle__interiorCard">
+                        <p class="internalArticle__interiorCardLeft">1</p>
+                        <div class="internalarticle__interiorCardRight">
+                          <h3>Высокая звуко - и теплоизоляция</h3>
+                          <p>
+                            Внутреннее наполнение из пенополистирола и
+                            специальный уплотнитель по периметру коробки
+                            обеспечивают максимальное примыкание полотна.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="internalArticle__interiorCard">
+                        <p class="internalArticle__interiorCardLeft">1</p>
+                        <div class="internalarticle__interiorCardRight">
+                          <h3>Устойчивость к химииь</h3>
+                          <p>
+                            Идеально подходят для помещений, где часто
+                            проводится влажная уборка с применением средств
+                            бытовой химии и дезинфекции.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        @include('partials/bid.html')
+      </main>
+      @include('partials/footer.html')
+    </div>
+  </body>
+</html>

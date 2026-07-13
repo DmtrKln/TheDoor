@@ -7,81 +7,34 @@
   border-bottom: 1px solid var(--light-grey);
   background-color: #fafafa;
 
-  // &.scrolled {
-
-  //   .header__wrapp {
-  //     border: 1px solid rgba(217, 217, 217, 0.46);
-  //     background-color: #1a1a1a;
-  //     height: 68px;
-
-  //   }
-
-  //   .header__logoWrapp {
-
-  //     border-radius: 0;
-
-  //     border-top-color: rgba(217, 217, 217, 0.46);
-  //     border-bottom-color: rgba(217, 217, 217, 0.46);
-
-  //     height: 68px;
-
-  //     @include mobile {
-  //       border: none;
-  //       height: fit-content;
-
-  //     }
-
-  //     img {
-  //       width: 153px;
-
-  //       @include mobile {
-  //         width: 136px;
-  //       }
-  //     }
-
-  //     &::after {
-  //       border-top-color: rgba(217, 217, 217, 0.46);
-  //       border-bottom-color: rgba(217, 217, 217, 0.46);
-  //     }
-  //   }
-
-  //   .header__right {
-
-  //     border-radius: 0;
-
-  //     border-top-color: rgba(217, 217, 217, 0.46);
-  //     border-bottom-color: rgba(217, 217, 217, 0.46);
-
-  //     @include mobile {
-  //       border: none;
-  //     }
-
-  //     &::before {
-  //       border-top-color: rgba(217, 217, 217, 0.46);
-  //       border-bottom-color: rgba(217, 217, 217, 0.46);
-  //     }
-  //   }
-  // }
+  @include mobile {
+    border: 1px solid transparent;
+    background-color: #fff;
+  }
 
   &__wrapp {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 0;
+    padding: 6px 0;
     gap: 20px;
 
     z-index: 999999;
 
     transition: all 0.3s ease;
+
+    @include mobile {
+      padding: 4px 0;
+    }
   }
 
-  &__logo {
-    width: 226px;
-
-    transition: all 0.3s ease;
+  &__logoWrapp {
+    width: 225px;
+    aspect-ratio: 225 / 66;
 
     @include mobile {
       width: 162px;
+      aspect-ratio: 162 / 48;
     }
   }
 
@@ -226,19 +179,16 @@
     }
   }
 
-  &__burgerIcon {
-    margin: auto;
+  &__burger {
     display: none;
     place-items: center;
     width: 26px;
     height: 22px;
     cursor: pointer;
-    overflow: hidden;
 
     z-index: 3;
 
     span {
-      width: 22px;
       height: 2px;
       display: block;
       border-radius: 999px;
@@ -264,11 +214,11 @@
     }
   }
 
-  &__burgerIcon.active {
+  &__burger.active {
     span:nth-child(1) {
       transform-origin: center center;
       transform: rotate(-45deg) translate(-20%, 500%);
-      width: 25px;
+      width: 20px;
     }
 
     span:nth-child(2) {
@@ -278,32 +228,35 @@
     span:nth-child(3) {
       transform-origin: center center;
       transform: rotate(45deg) translate(-20%, -500%);
-      width: 25px;
+      width: 20px;
     }
   }
 
   &__mobile {
     display: flex;
     flex-direction: column;
-    gap: 40px;
     position: fixed;
     top: -300%;
     left: 0;
     z-index: 10;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 100%;
-    height: 100vh;
-    padding: 0 25px 45px;
-    background-color: #1a1a1a;
+    height: calc(100vh - 80px);
+    background-color: var(--red);
 
     transition: top 0.5s ease;
 
     overflow-y: auto;
 
+    @include mobile {
+      height: calc(100vh - 48px);
+    }
+
     &.active {
-      top: 0;
+      top: 80px;
+
+      @include mobile {
+        top: 48px;
+      }
     }
   }
 
@@ -334,7 +287,9 @@
   &__mobileTop {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    align-items: center;
+    gap: 28px;
+    padding: 32px 25px 40px;
   }
 
   &__mobileMenu {
@@ -342,8 +297,8 @@
     flex-direction: column;
     align-items: center;
 
-    margin: 102px 0 0 0;
-    gap: 15px;
+    margin: 0;
+    gap: 18px;
 
     li a {
       font-family: $font-family;
@@ -351,6 +306,7 @@
       font-size: 20px;
       text-align: center;
       color: #fff;
+      transition: color 0.3s ease;
 
       &:hover {
         color: $pink;
@@ -358,35 +314,111 @@
     }
   }
 
+  &__mobileConnect {
+    width: 100%;
+    padding: 14px 24px;
+    border-radius: 16px;
+    background-color: var(--white);
+    border: 1px solid var(--white);
+
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: var(--red);
+
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: transparent;
+      color: var(--white);
+    }
+  }
+
+  &__mobileCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-top: auto;
+    width: 100%;
+    padding: 32px 25px 40px;
+    background-color: var(--white);
+    border-radius: 32px 32px 0 0;
+  }
+
   &__mobileContact {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    gap: 15px;
+    gap: 10px;
 
     p,
     a {
       font-family: $font-family;
       font-weight: 300;
-      font-size: 18px;
+      font-size: 16px;
       text-align: center;
-      color: #fff;
+      color: var(--red);
     }
 
-    a:hover {
-      color: $pink;
+    a {
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--dark-grey);
+      }
+    }
+
+    .header__mobileCompany {
+      font-weight: 600;
+      font-size: 18px;
+      color: #000;
+    }
+
+    h6 {
+      margin-top: 6px;
+      font-family: $font-family;
+      font-weight: 600;
+      font-size: 16px;
+      color: #000;
+    }
+
+    .header__mobileFactory {
+      font-size: 14px;
+      color: var(--medium-grey);
     }
   }
 
   &__mobileSocial {
     display: flex;
-    position: relative;
-    padding-bottom: 32px;
-    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
 
-    text-align: center;
-    width: fit-content;
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    // все иконки приводим к единому виду: красная плашка + белый глиф
+    svg path {
+      fill: var(--red);
+    }
+
+    svg path[fill="#C6224E"] {
+      fill: var(--white);
+    }
+
+    svg rect {
+      fill: var(--red);
+    }
+
+    // путь внутри <mask> должен остаться белым, иначе luminance-маска ломается
+    svg mask path {
+      fill: var(--white);
+    }
   }
 
   &__mobileCopyright {
@@ -409,15 +441,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    border-radius: 40px;
+    flex-shrink: 0;
     width: 40px;
     height: 40px;
+    transition: opacity 0.3s ease;
 
     &:hover {
-      svg path {
-        fill: $pink;
-      }
+      opacity: 0.7;
     }
   }
 

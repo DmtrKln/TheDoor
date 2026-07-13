@@ -1,0 +1,390 @@
+.hero {
+  margin-top: 120px;
+
+  @include mobile {
+    margin-top: 72px;
+  }
+
+  &__wrapp {
+    display: flex;
+
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+
+  &__breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 64px;
+
+    @include mobile {
+      margin-bottom: 30px;
+    }
+
+    a {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      color: var(--grey);
+      white-space: nowrap;
+      transition: color 0.3s ease;
+
+      &:last-child {
+        color: var(--red);
+      }
+
+      &:hover {
+        color: var(--red);
+      }
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+    width: 50%;
+    padding: 112px 20px 112px 120px;
+    background-color: #f8f8f8;
+
+    @include tablet {
+      order: 2;
+      width: 100%;
+      padding: 32px 20px 40px 20px;
+    }
+
+    @include mobile {
+      gap: 32px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include mobile {
+      gap: 16px;
+    }
+  }
+
+  &__about {
+    font-family: "Bounded", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #000;
+
+    width: fit-content;
+    padding: 6px 12px;
+
+    @include mobile {
+      font-weight: 500;
+      font-size: 11px;
+      color: var(--red);
+
+      background-color: rgba(198, 34, 78, 0.1);
+      border-radius: 4px;
+    }
+  }
+
+  h1 {
+    font-family: "Bounded", sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 110%;
+    color: var(--red);
+
+    @include mobile {
+      font-size: 26px;
+    }
+
+    span {
+      font-family: "Bounded", sans-serif;
+      font-size: 40px;
+      line-height: 110%;
+      font-weight: 500;
+      color: #000;
+
+      @include mobile {
+        font-weight: 400;
+        font-size: 26px;
+      }
+    }
+  }
+
+  &__desc {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+    color: #000;
+
+    @include mobile {
+      font-size: 15px;
+      line-height: 150%;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    @include mobile {
+      gap: 12px;
+    }
+
+    p {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+      color: var(--medium-grey);
+
+      span {
+        font-weight: 700;
+        color: var(--dark-grey);
+      }
+    }
+  }
+
+  &__cards {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    img {
+      aspect-ratio: 40 / 40;
+      border-radius: 20px;
+      object-fit: cover;
+
+      &:not(:first-child) {
+        margin-left: -12px;
+      }
+
+      @include mobile {
+        aspect-ratio: 36 / 36;
+        width: 36px;
+        height: 36px;
+      }
+    }
+  }
+
+  &__right {
+    width: 50%;
+
+    @include tablet {
+      order: 1;
+      width: 100%;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 780 / 700;
+      object-fit: cover;
+
+      @include tablet {
+        aspect-ratio: 320 / 220;
+        height: 320px;
+      }
+    }
+  }
+}
+
+.achievements {
+  margin-top: 120px;
+
+  @include mobile {
+    margin-top: 60px;
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--container-offset);
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: calc((100% - 60px) / 4);
+    text-align: center;
+
+    @include small-tablet {
+      width: calc((100% - 20px) / 2);
+    }
+
+    h3 {
+      font-family: "Bounded", sans-serif;
+      font-weight: 566;
+      font-size: 50px;
+      color: var(--red);
+
+      @include mobile {
+        font-size: 40px;
+      }
+    }
+
+    p {
+      font-family: "Bounded", sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      text-transform: uppercase;
+      color: #000;
+
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.help {
+  margin-top: 120px;
+
+  @include mobile {
+    margin-top: 60px;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    max-width: 800px;
+    margin: 0 auto 80px;
+    text-align: center;
+
+    @include mobile {
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      font-family: "Bounded", sans-serif;
+      font-weight: 500;
+      font-size: 40px;
+      line-height: 120%;
+      text-align: center;
+      color: #000;
+
+      @include mobile {
+        font-size: 26px;
+      }
+    }
+
+    p {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 160%;
+      text-align: center;
+      color: #000;
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include mobile {
+      gap: 24px;
+    }
+
+    > p {
+      font-family: "Bounded", sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+      text-transform: uppercase;
+      text-align: center;
+      color: #000;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    gap: 32px;
+
+    @include tablet {
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: calc((100% - 80px) / 3);
+    padding: 40px;
+
+    @include tablet {
+      padding: 24px;
+      width: 100%;
+    }
+  }
+
+  &__cardBottom {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    h4 {
+      font-family: "Bounded", sans-serif;
+      font-weight: 500;
+      font-size: 24px;
+      color: #000;
+
+      @include mobile {
+        font-size: 20px;
+      }
+    }
+
+    p {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 160%;
+      color: #000;
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    background: rgba(198, 34, 78, 0.06);
+
+    @include mobile {
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+    }
+  }
+}
