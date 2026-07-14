@@ -12,6 +12,7 @@
     margin-bottom: 34px;
 
     @include mobile {
+      overflow: auto;
       margin-top: 30px;
     }
 
@@ -31,37 +32,303 @@
         color: var(--red);
       }
     }
+
+    svg {
+      flex-shrink: 0;
+      display: block;
+      width: 18px;
+    }
   }
 
   &__wrapp {
     display: flex;
-    gap: 82px;
+    gap: 60px;
+
+    @include tablet {
+      flex-direction: column;
+      padding: 0 16px;
+      gap: 0;
+    }
   }
 
   &__gallery {
-    width: (calc(42% - 41px));
-
     display: flex;
+    align-items: flex-start;
     gap: 10px;
+    width: calc(42% - 30px);
+
+    @include tablet {
+      display: none;
+    }
   }
 
   &__cardgalleryMain {
     width: calc(75% - 5px);
+    border: 1px solid #e8e8e8;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+
+    img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 484 / 614;
+      object-fit: cover;
+    }
   }
 
-  &__galerryGroup {
+  &__galleryGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     width: calc(25% - 5px);
   }
 
+  &__cardgallery {
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+
+    &:hover {
+      border-color: var(--red);
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 144 / 183;
+      object-fit: cover;
+    }
+  }
+
+  &__swipper {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__swiper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__swiperSlide {
+    width: 100%;
+    aspect-ratio: 484 / 614;
+    object-fit: cover;
+    border: 1px solid #e8e8e8;
+    border-radius: 16px;
+  }
+
+  &__scrollbar.swiper-scrollbar {
+    position: static;
+    width: 100%;
+    height: 6px;
+    margin-top: 16px;
+    background: var(--light-grey);
+    border-radius: 999px;
+
+    .swiper-scrollbar-drag {
+      background: var(--red);
+      border-radius: 999px;
+    }
+  }
+
   &__right {
-    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-top: 26px;
+    gap: 30px;
+    flex: 1;
+
+    @include tablet {
+      padding-top: 65px;
+    }
+
+    > button {
+      width: fit-content;
+      padding: 14px 58px;
+      border-radius: 16px;
+      background-color: var(--dark-grey);
+      border: 1px solid transparent;
+      transition: all 0.3s ease;
+
+      font-family: "Bounded", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      text-transform: uppercase;
+      color: var(--white);
+
+      @include mobile {
+        padding: 14px 20px;
+        width: 100%;
+      }
+
+      &:hover {
+        border: 1px solid var(--dark-grey);
+        color: var(--dark-grey);
+        background-color: transparent;
+      }
+
+      &:active {
+        border: 1px solid var(--dark-grey);
+        background-color: var(--medium-grey);
+        color: var(--dark-grey);
+      }
+    }
+  }
+
+  &__type {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    border: 1px solid #2ecc71;
+    border-radius: 2px;
+    padding: 4px 8px;
+
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    font-size: 9px;
+    text-transform: uppercase;
+    color: #2ecc71;
+
+    @include tablet {
+      top: 30px;
+      left: 0;
+
+      right: auto;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include mobile {
+      gap: 16px;
+    }
+
+    h1 {
+      font-family: "Bounded", sans-serif;
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 120%;
+      color: #1a1a1a;
+
+      @include mobile {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    @include tablet {
+      flex-wrap: nowrap;
+      overflow: auto;
+    }
+  }
+
+  &__tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 68px;
+    cursor: pointer;
+    transition: margin-top 0.3s ease;
+    justify-content: space-between;
+    flex-shrink: 0;
+
+    @include tablet {
+      margin-left: 6px;
+    }
+
+    @include mobile {
+      width: 36px;
+    }
+
+    &.active {
+      margin-top: 8px;
+
+      @include tablet {
+        margin-top: 10px;
+      }
+
+      @include mobile {
+        margin-top: 6px;
+      }
+      img {
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        width: 53px;
+        height: 53px;
+        outline: 1px solid rgba(0, 0, 0, 0.15);
+        outline-offset: 8px;
+        border-radius: 8px;
+
+        @include mobile {
+          width: 26px;
+          height: 26px;
+          outline-offset: 5px;
+        }
+      }
+    }
+  }
+
+  &__swatch {
+    width: 100%;
+
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    aspect-ratio: 68 / 68;
+    transition: all 0.3s ease;
+
+    @include mobile {
+      width: 36px;
+      height: 36px;
+      aspect-ratio: 36 / 36;
+    }
+  }
+
+  &__name {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    text-align: center;
+    color: #a09892;
+
+    @include mobile {
+      font-size: 10px;
+    }
+  }
+
+  &:hover &__swatch {
+    border: 1px solid rgba(0, 0, 0, 0.15);
   }
 }
 
 .specs {
+  margin-top: 100px;
   margin-bottom: 120px;
 
   @include mobile {
+    margin-top: 60px;
     margin-bottom: 84px;
   }
 
@@ -100,6 +367,11 @@
     margin-bottom: 32px;
     gap: 48px;
 
+    @include tablet {
+      flex-direction: column;
+      gap: 32px;
+    }
+
     @include mobile {
       margin-bottom: 30px;
     }
@@ -107,6 +379,10 @@
 
   &__main {
     width: calc(50% - 24px);
+
+    @include tablet {
+      width: 100%;
+    }
   }
 
   &__block {
@@ -142,6 +418,7 @@
     }
   }
   &__table {
+    width: 100%;
     border: 1px solid #e5e7eb;
     border-radius: 12px;
 
@@ -201,6 +478,10 @@
     flex-direction: column;
     gap: 32px;
     width: calc(50% - 24px);
+
+    @include tablet {
+      width: 100%;
+    }
   }
 
   &__size {
@@ -304,6 +585,10 @@
   &__componentsDesc {
     display: flex;
     gap: 24px;
+
+    @include small-tablet {
+      flex-direction: column;
+    }
   }
 
   &__componentsLeft,
@@ -313,6 +598,10 @@
     justify-content: space-between;
     gap: 12px;
     width: calc(50% - 12px);
+
+    @include small-tablet {
+      width: 100%;
+    }
 
     h4 {
       font-family: "Montserrat", sans-serif;

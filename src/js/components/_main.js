@@ -59,3 +59,41 @@ if (document.querySelector(".info__swiper")) {
     },
   });
 }
+
+// страница товара: галерея (свайпер + скроллбар), лайтбокс, палитра цветов
+if (document.querySelector(".product")) {
+  const productSwiperEl = document.querySelector(".product__swiper");
+  const productGalleryWrap = document.querySelector(".product__swipper");
+
+  if (productSwiperEl && productGalleryWrap) {
+    // скроллбар создаём в JS, чтобы не трогать разметку
+    const scrollbar = document.createElement("div");
+    scrollbar.className = "product__scrollbar swiper-scrollbar";
+    productGalleryWrap.appendChild(scrollbar);
+
+    new Swiper(productSwiperEl, {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      observer: true,
+      observeParents: true,
+      scrollbar: {
+        el: scrollbar,
+        draggable: true,
+      },
+    });
+  }
+
+  // лайтбокс для десктопной галереи
+  if (typeof Fancybox !== "undefined") {
+    Fancybox.bind('[data-fancybox="products"]');
+  }
+
+  // палитра цветов — выбор активного
+  const productTabs = document.querySelectorAll(".product__tab");
+  productTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      productTabs.forEach((t) => t.classList.remove("active"));
+      tab.classList.add("active");
+    });
+  });
+}

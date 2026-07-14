@@ -1,0 +1,219 @@
+.internalArticle {
+  margin-top: 120px;
+
+  @include mobile {
+    margin-top: 72px;
+  }
+
+  &__breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+
+    @include mobile {
+      margin-bottom: 24px;
+    }
+
+    svg {
+      flex-shrink: 0;
+    }
+
+    a {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      color: var(--grey);
+      white-space: nowrap;
+      transition: color 0.3s ease;
+
+      &:last-child {
+        color: var(--red);
+      }
+
+      &:hover {
+        color: var(--red);
+      }
+    }
+  }
+
+  &__wrapp {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    @include mobile {
+      gap: 30px;
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include mobile {
+      gap: 12px;
+    }
+
+    h1 {
+      font-family: "Bounded", sans-serif;
+      font-weight: 500;
+      font-size: 40px;
+      line-height: 120%;
+      color: #000;
+
+      @include mobile {
+        font-size: 22px;
+      }
+    }
+
+    p {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 150%;
+      color: var(--medium-grey);
+
+      @include mobile {
+        font-size: 15px;
+      }
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+
+    @include mobile {
+      gap: 40px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    align-items: stretch;
+    gap: 30px;
+
+    @include small-tablet {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    // чётные карточки — фото справа (для статьи, которую вы добавите ниже)
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+
+      @include small-tablet {
+        flex-direction: column;
+      }
+    }
+  }
+
+  // .internalArticle__cardleft — в разметке класс с маленькой l
+  &__cardleft {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(50% - 15px);
+    padding: 24px;
+    border: 1px solid #e8e8e8;
+    border-radius: 24px;
+
+    @include small-tablet {
+      width: 100%;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  &__cardRight {
+    width: calc(50% - 15px);
+    padding: 0 40px;
+    border: 1px solid #e8e8e8;
+    border-radius: 24px;
+
+    @include small-tablet {
+      width: 100%;
+      padding: 0;
+      border: none;
+    }
+  }
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__interiorCard {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 28px 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      gap: 12px;
+      padding: 20px 0;
+    }
+  }
+
+  &__interiorCardLeft {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: var(--red);
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--white);
+
+    @include mobile {
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+    }
+  }
+
+  // .internalarticle__interiorCardRight — в разметке блок с маленькой буквы
+  &__interiorCard .internalarticle__interiorCardRight {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    h3 {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--dark-grey);
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+
+    p {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: var(--medium-grey);
+    }
+  }
+}

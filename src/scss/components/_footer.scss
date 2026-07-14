@@ -196,6 +196,16 @@
       font-weight: 400;
     }
   }
+  a {
+    transition: 0.3s all ease;
+    &:hover {
+      transform: scale(1.05);
+
+      @include maxdesktop {
+        transform: none;
+      }
+    }
+  }
 
   &__factory {
     font-family: "Bounded", sans-serif;

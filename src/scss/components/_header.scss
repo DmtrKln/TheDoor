@@ -24,7 +24,7 @@
     transition: all 0.3s ease;
 
     @include mobile {
-      padding: 4px 0;
+      padding: 4px 0 0 0;
     }
   }
 
@@ -44,7 +44,6 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 68px;
 
     transition: all 0.3s ease;
 
@@ -56,7 +55,6 @@
 
     @include mobile {
       background-color: transparent;
-      height: 56px;
       padding: 0;
     }
   }
@@ -266,10 +264,10 @@
     }
 
     &.active {
-      top: 80px;
+      top: 78px;
 
       @include mobile {
-        top: 58px;
+        top: 52px;
       }
     }
   }
@@ -315,15 +313,16 @@
     gap: 16px;
 
     li a {
+      display: inline-block;
       font-family: "Montserrat", sans-serif;
       font-weight: 500;
       font-size: 16px;
       text-align: center;
       color: var(--white);
-      transition: color 0.3s ease;
+      transition: all 0.3s ease;
 
       &:hover {
-        color: $pink;
+        transform: scale(1.25);
       }
     }
   }
@@ -337,12 +336,18 @@
     background: var(--white);
     border-radius: 16px;
     padding: 6px 24px 7px 23px;
+    border: 1px solid transparent;
 
     transition: all 0.3s ease;
 
     &:hover {
-      background-color: transparent;
-      color: var(--white);
+      border: 1px solid #000;
+      color: var(--dark-grey);
+    }
+
+    &:active {
+      border: 1px solid var(--medium-grey);
+      color: var(--medium-grey);
     }
   }
 
@@ -368,6 +373,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: stretch;
     gap: 24px;
     width: 100%;
     padding: 32px 25px 40px;
@@ -389,10 +395,10 @@
       text-align: center;
       color: var(--red);
 
-      transition: color 0.3s ease;
+      transition: all 0.3s ease;
 
       &:hover {
-        color: var(--dark-grey);
+        transform: scale(1.2);
       }
     }
 
@@ -411,28 +417,14 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 8px;
 
     svg {
-      width: 28px;
-      height: 28px;
+      transition: 0.3s all ease;
     }
 
-    svg path {
-      fill: var(--red);
-    }
-
-    svg path[fill="#C6224E"] {
-      fill: var(--white);
-    }
-
-    svg rect {
-      fill: var(--red);
-    }
-
-    // путь внутри <mask> должен остаться белым, иначе luminance-маска ломается
-    svg mask path {
-      fill: var(--white);
+    svg:hover {
+      transform: scale(1.25);
     }
   }
 
@@ -592,9 +584,6 @@
     line-height: 110%;
     outline: none;
     transition: border-color 0.3s ease;
-
-    &:focus {
-    }
   }
 
   .header__checkbox {
@@ -689,53 +678,67 @@
     position: fixed;
     right: 0;
     top: 80%;
-    padding: 28px 20px 32px 24px;
-    background-color: #1a1a1a;
-    border-radius: 32px;
-    z-index: 9;
+    padding: 38px 24px;
+    border: 1px solid var(--light-grey);
+    border-radius: 16px;
+    z-index: 99999;
+
+    box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.05);
+    background-color: var(--white);
 
     @include mobile {
       flex-direction: column;
-      gap: 20px;
+      gap: 16px;
 
       top: 70%;
     }
 
-    p {
-      width: 277px;
-      font-family: $second-family;
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 150%;
-      color: #fff;
+    &__top {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      h4 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        color: var(--dark-grey);
+      }
+
+      p {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 150%;
+        color: var(--medium-grey);
+      }
     }
 
     button {
-      border-radius: 20px;
-      background-color: $pink;
-      font-family: $second-family;
-      font-weight: 600;
-      font-size: 14px;
-      color: #fff;
       width: fit-content;
-      padding: 10px 22px;
-      border: 1px solid transparent;
+      padding: 14px 18px;
       transition: 0.3s all ease;
+      border-radius: 16px;
+      background: var(--red);
+
+      font-family: "Bounded", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: var(--white);
+      border: 1px solid transparent;
 
       @include mobile {
         padding: 10px 34px;
       }
 
       &:hover {
-        border: 1px solid $pink;
-        background-color: #fff;
-        color: $pink;
+        border: 1px solid #000;
+        color: var(--dark-grey);
       }
 
       &:active {
-        border: 1px solid transparent;
-        background-color: #646464;
-        color: #fff;
+        border: 1px solid var(--medium-grey);
+        color: var(--medium-grey);
       }
     }
   }
@@ -762,19 +765,14 @@
     position: fixed;
     top: 0;
     right: 0;
-    box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.1);
-    background: #1a1a1a;
-    border: 1px solid #fff;
-    border-radius: 30px;
-    max-height: 660px;
+    box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.1);
+    background-color: var(--white);
+    border-radius: 16px;
+    max-height: 576px;
     overflow-y: auto;
     max-height: 100vh;
     width: 90%;
-    max-width: 660px;
-
-    @include mobile {
-      height: 90%;
-    }
+    max-width: 440px;
 
     top: 50%;
     left: 50%;
@@ -783,100 +781,82 @@
     z-index: 100001;
 
     &__wrapp {
-      padding: 40px;
+      padding: 24px;
       position: relative;
-
-      @include mobile {
-        padding: 24px 20px;
-      }
     }
 
     &__form {
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      margin-bottom: 15px;
+      gap: 20px;
+      margin-bottom: 20px;
     }
 
     &__btn {
-      background-color: $pink;
+      border-radius: 16px;
+      padding: 18px 20px;
       width: 100%;
-      font-family: $font5;
-      font-weight: 700;
-      font-size: 18px;
-      color: #fff;
-      padding: 17px 0;
-      border-radius: 14px;
+      box-shadow: 0 8px 16px -4px rgba(198, 34, 78, 0.2);
+      background: var(--red);
       transition: all 0.3s ease;
+
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--white);
+
       border: 1px solid transparent;
 
       &:hover {
-        border: 2px solid $pink;
-        background-color: #fff;
-        color: $pink;
-
-        @include mobile {
-          border: 1px solid #fff;
-        }
+        border: 1px solid #000;
+        color: var(--dark-grey);
       }
 
       &:active {
-        background: $text-grey;
-        color: #fff;
+        border: 1px solid var(--medium-grey);
+        color: var(--medium-grey);
       }
     }
 
     &__formTitle {
-      h2 {
-        font-family: $font5;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      h4 {
+        font-family: "Bounded", sans-serif;
         font-weight: 500;
-        font-size: 36px;
-        color: $pink;
+        font-size: 24px;
+        color: #000;
 
         @include mobile {
-          font-size: 26px;
+          font-size: 22px;
         }
       }
 
       p {
-        font-family: $font5;
+        font-family: "Montserrat", sans-serif;
         font-weight: 400;
-        font-size: 22px;
-        line-height: 150%;
-        color: #dfdfdf;
-        margin-bottom: 8px;
-
-        @include mobile {
-          margin: 0;
-          font-weight: 400;
-          font-size: 18px;
-          line-height: 150%;
-        }
+        font-size: 14px;
+        color: var(--grey);
       }
     }
 
     &__cross {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--grey);
       cursor: pointer;
       position: absolute;
-      top: 22px;
-      right: 22px;
+      top: 24px;
+      right: 24px;
       z-index: 99999;
-
-      @include mobile {
-        top: 16px;
-        right: 16px;
-      }
-    }
-
-    &__group {
-      display: flex;
-      gap: 15px;
-      justify-content: space-between;
-
-      @include maxdesktop {
-        flex-direction: column;
-        gap: 12px;
-      }
+      transform: rotate(45deg);
+      padding: 5px 10px;
+      border: 1px solid var(--grey);
+      border-radius: 16px;
+      background-color: var(--white);
     }
 
     &__field {
@@ -886,26 +866,22 @@
     }
 
     &__label {
-      font-family: $font5;
-      font-weight: 600;
-      font-size: 18px;
-      color: #bbb;
-
-      @include mobile {
-        font-size: 16px;
-      }
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: #000;
     }
 
     &__input {
-      font-family: $font5;
+      border: 1px solid var(--grey);
+      border-radius: 8px;
+      background-color: var(--white);
+      padding: 14px 16px;
+
+      font-family: "Montserrat", sans-serif;
       font-weight: 400;
-      font-size: 18px;
-      color: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      padding: 13px 16px;
-      box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.1);
-      background: #1a1a1a;
+      font-size: 16px;
+      color: #000;
 
       @include mobile {
         font-size: 16px;
@@ -913,37 +889,27 @@
     }
 
     &__input::placeholder {
-      font-family: $font5;
+      font-family: "Montserrat", sans-serif;
       font-weight: 400;
-      font-size: 18px;
-      color: #6f6f6f;
-      @include mobile {
-        font-size: 16px;
-      }
+      font-size: 16px;
+      color: var(--grey);
     }
 
     textarea {
-      font-family: $font5;
+      font-family: "Montserrat", sans-serif;
       font-weight: 400;
-      font-size: 18px;
-      color: #fff;
-      padding: 14px 0 104px 16px;
-      height: 140px;
+      font-size: 16px;
+      color: #000;
+
+      padding: 12px 0 20px 16px;
+      height: 80px;
       overflow: hidden;
 
-      @include mobile {
-        font-size: 16px;
-      }
-
       &::placeholder {
-        font-family: $font5;
+        font-family: "Montserrat", sans-serif;
         font-weight: 400;
-        font-size: 18px;
-        color: #bbb;
-
-        @include mobile {
-          font-size: 16px;
-        }
+        font-size: 16px;
+        color: var(--grey);
       }
     }
 
@@ -955,7 +921,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     .contactUs__checkboxInput {
@@ -965,8 +931,8 @@
       width: 24px;
       height: 24px;
       flex-shrink: 0;
-      border: 1px solid #fff;
-      border-radius: 8px;
+      border: 1.5px solid var(--red);
+      border-radius: 4px;
       background-color: transparent;
       cursor: pointer;
       display: grid;
@@ -982,18 +948,12 @@
       height: 12px;
       transform: scale(0);
       transition: transform 0.15s ease;
-      background-color: transparent;
       clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-    }
-
-    &__checkboxInput:checked {
-      background-color: transparent;
-      border-color: #fff;
     }
 
     &__checkboxInput:checked::before {
       transform: scale(1);
-      background-color: #fff;
+      background-color: var(--red);
     }
 
     &__checkboxInput:focus-visible {
@@ -1001,29 +961,17 @@
     }
 
     &__checkboxLabel {
-      color: #fff;
-      user-select: none;
-
-      font-family: $font-family;
-      font-weight: 200;
-      font-size: 14px;
-      color: #fff;
-
-      @include mobile {
-        font-size: 14px;
-      }
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 150%;
+      color: var(--grey);
 
       a {
-        font-family: $font-family;
-        font-weight: 200;
-        font-size: 14px;
-        color: #fff;
+        font-weight: 600;
         text-decoration: underline;
         text-decoration-skip-ink: none;
-
-        @include mobile {
-          font-size: 14px;
-        }
+        color: var(--red);
       }
     }
   }
@@ -1053,36 +1001,46 @@
     inset: 0;
     z-index: 99999;
 
-    &__wrapp {
-      text-align: center;
-      box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.1);
-      background: #1a1a1a;
-      border: 1px solid #fff;
-      border-radius: 30px;
-      max-width: 660px;
-      max-height: 335px;
-      max-height: 100vh;
-      width: 90%;
-      padding: 70px 0 85px 0;
-      z-index: 9999;
-      position: relative;
-    }
-
-    img {
-      width: 220px;
-      margin-bottom: 18px;
+    &__cross {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--grey);
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 99999;
+      transform: rotate(45deg);
+      padding: 5px 10px;
+      border: 1px solid var(--grey);
+      border-radius: 16px;
+      background-color: var(--white);
 
       @include mobile {
-        width: 150px;
+        top: 15px 20px;
       }
     }
 
-    h2 {
-      font-family: $font-family;
-      font-weight: 500;
-      font-size: 30px;
+    &__wrapp {
+      box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.1);
+      background-color: var(--white);
+      border-radius: 16px;
+      padding: 56px 96px;
+      z-index: 9999;
+      position: relative;
+
+      @include mobile {
+        padding: 56px 36px;
+      }
+    }
+
+    h4 {
+      font-family: "Bounded", sans-serif;
+      font-weight: 400;
+      font-size: 24px;
       text-align: center;
-      color: $pink;
+      color: #000;
 
       @include mobile {
         font-size: 22px;
@@ -1091,18 +1049,6 @@
 
     &.active {
       display: flex;
-    }
-
-    &__cross {
-      position: absolute;
-      cursor: pointer;
-      top: 35px;
-      right: 40px;
-
-      @include mobile {
-        top: 30px;
-        right: 30px;
-      }
     }
   }
 }
