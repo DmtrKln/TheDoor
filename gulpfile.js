@@ -223,9 +223,9 @@ const images = () => {
         quality: 80,
         progressive: true
       }),
-      image.optipng({
-        optimizationLevel: 2
-      }),
+      // optipng убран: пакет imagemin-optipng не ставится (нативный optipng-bin),
+      // image.optipng() возвращал undefined и ронял сборку -> "fn is not a function".
+      // PNG отдаём как есть, лёгкие версии делают таски webpImages / avifImages.
     ])))
     .pipe(dest(paths.buildImgFolder))
 };

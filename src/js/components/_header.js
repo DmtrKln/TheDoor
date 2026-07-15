@@ -40,6 +40,11 @@ const modalForm = document.querySelector("[data-modal-form]");
 const connectBtn = document.querySelector(".header__connect");
 const mobileContactBtn = document.querySelector(".header__btnMobile");
 const mobileConnect = document.querySelector(".header__mobileConnect");
+const buyNowBtn = document.querySelector(".buyNow__btn");
+const btnCost = document.querySelector(".product__btnCost");
+const bannertBtnOutline = document.querySelector(".bannert__btn--outline");
+const projectCard = document.querySelectorAll(".project__card");
+const projectCalcBtn = document.querySelector(".project__calc");
 
 const contactUs = document.querySelector(".contactUs");
 const contactUsOverlay = document.querySelector(".contactUs__overlay");
@@ -64,7 +69,19 @@ function closeModal() {
   updateScrollLock();
 }
 
-[connectBtn, mobileContactBtn, mobileConnect].forEach((btn) => {
+[
+  connectBtn,
+  mobileContactBtn,
+  mobileConnect,
+  buyNowBtn,
+  btnCost,
+  bannertBtnOutline,
+  projectCalcBtn,
+].forEach((btn) => {
+  btn?.addEventListener("click", openModal);
+});
+
+projectCard.forEach((btn) => {
   btn?.addEventListener("click", openModal);
 });
 

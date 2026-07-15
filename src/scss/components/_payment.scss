@@ -1,0 +1,237 @@
+.payment {
+  margin-top: 120px;
+
+  @include mobile {
+    margin-top: 72px;
+  }
+
+  &__breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+
+    @include mobile {
+      margin-bottom: 24px;
+    }
+    svg {
+      flex-shrink: 0;
+    }
+
+    a {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      color: var(--grey);
+      white-space: nowrap;
+      transition: color 0.3s ease;
+
+      &:last-child {
+        color: var(--red);
+      }
+
+      &:hover {
+        color: var(--red);
+      }
+    }
+  }
+
+  &__wrapp {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    @include mobile {
+      gap: 30px;
+    }
+    h1 {
+      font-family: "Bounded", sans-serif;
+      font-weight: 500;
+      font-size: 30px;
+      color: #000;
+      @include mobile {
+        font-size: 22px;
+      }
+    }
+  }
+
+  &__cards {
+    display: flex;
+    gap: 24px;
+
+    @include tablet {
+      flex-wrap: wrap;
+      gap: 85px;
+    }
+  }
+
+  &__card {
+    width: calc(50% - 12px);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    background: var(--white);
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__img {
+    border-radius: 20px 20px 0 0;
+    height: 200px;
+    aspect-ratio: 768 / 200;
+
+    @include mobile {
+      aspect-ratio: 320 / 200;
+    }
+  }
+
+  &__svg {
+    border-radius: 16px;
+    width: 56px;
+    height: 56px;
+    background: #f3f4f6;
+    margin-left: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mobile {
+      margin-left: 16px;
+    }
+  }
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 48px 48px 48px;
+
+    @include mobile {
+      gap: 10px;
+      padding: 0 16px 52px 16px;
+    }
+
+    h2 {
+      font-family: "Bounded", sans-serif;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 120%;
+      color: #111827;
+    }
+
+    p {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #374151;
+      @include mobile {
+        margin-bottom: 58px;
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      list-style-type: disc;
+      padding-left: 20px;
+
+      li {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: #111827;
+      }
+
+      li span {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: #111827;
+      }
+    }
+  }
+}
+
+.buyNow {
+  margin-top: 120px;
+
+  @include mobile {
+    margin-top: 60px;
+  }
+
+  &__wrapp {
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-image: var(--buy-now-img);
+    background-size: cover;
+    background-position-x: center;
+    gap: 16px;
+
+    border-radius: 16px;
+
+    padding: 48px 48px 48px 64px;
+
+    @include mobile {
+      background-image: var(--buy-now-img-mobile);
+      padding: 65px 32px 42px 28px;
+      gap: 22px;
+    }
+
+    button {
+      font-family: "Bounded", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: #111827;
+      white-space: nowrap;
+
+      background: var(--white);
+      border-radius: 12px;
+      padding: 14px 80px;
+      width: fit-content;
+
+      @include mobile {
+        padding: 14px 60px;
+      }
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    h2 {
+      font-family: "Bounded", sans-serif;
+      font-weight: 566;
+      font-size: 44px;
+      line-height: 110%;
+      color: var(--white);
+      @include mobile {
+        font-size: 22px;
+      }
+    }
+    h3 {
+      font-family: "Bounded", sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 150%;
+      color: #e5e7eb;
+
+      @include mobile {
+        font-weight: 300;
+        font-size: 16px;
+      }
+    }
+  }
+}

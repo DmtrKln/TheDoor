@@ -36,7 +36,8 @@
   &__tabs {
     display: flex;
     gap: 12px;
-    margin-bottom: 68px;
+    margin-bottom: 58px;
+    padding-bottom: 10px;
     overflow: auto;
 
     @include mobile {
@@ -135,6 +136,18 @@
 
     background-color: var(--white);
 
+    &:hover .door__more {
+      color: #fff;
+
+      background-color: var(--red);
+    }
+
+    &:active .door__more {
+      color: var(--medium-grey);
+      border: 1px solid transparent;
+      background: var(--grey);
+    }
+
     @include laptop {
       width: calc((100% - 80px) / 3);
 
@@ -202,10 +215,10 @@
     gap: 8px;
 
     h2 {
-      font-family: "Montserrat", sans-serif;
-      font-weight: 600;
+      font-family: "Bounded", sans-serif;
+      font-weight: 500;
       font-size: 14px;
-      color: var(--white);
+      color: #000;
     }
 
     p {
@@ -229,17 +242,5 @@
     font-weight: 600;
     font-size: 16px;
     color: var(--red);
-
-    &:hover {
-      color: #fff;
-
-      background-color: var(--red);
-    }
-
-    &:active {
-      color: var(--medium-grey);
-      border: 1px solid transparent;
-      background: var(--grey);
-    }
   }
 }

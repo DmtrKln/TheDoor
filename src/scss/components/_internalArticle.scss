@@ -11,8 +11,11 @@
     gap: 10px;
     margin-bottom: 40px;
 
-    @include mobile {
+    @include small-tablet {
       margin-bottom: 24px;
+
+      overflow: auto;
+      padding-bottom: 10px;
     }
 
     svg {
@@ -50,17 +53,16 @@
   &__title {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
 
     @include mobile {
-      gap: 12px;
+      gap: 20px;
     }
 
     h1 {
       font-family: "Bounded", sans-serif;
       font-weight: 500;
       font-size: 40px;
-      line-height: 120%;
       color: #000;
 
       @include mobile {
@@ -71,12 +73,10 @@
     p {
       font-family: "Montserrat", sans-serif;
       font-weight: 400;
-      font-size: 18px;
-      line-height: 150%;
-      color: var(--medium-grey);
-
+      font-size: 22px;
+      color: #000;
       @include mobile {
-        font-size: 15px;
+        font-size: 16px;
       }
     }
   }
@@ -84,7 +84,7 @@
   &__cards {
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    gap: 120px;
 
     @include mobile {
       gap: 40px;
@@ -96,52 +96,52 @@
     align-items: stretch;
     gap: 30px;
 
-    @include small-tablet {
+    @include maxdesktop {
       flex-direction: column;
       gap: 20px;
     }
 
-    // чётные карточки — фото справа (для статьи, которую вы добавите ниже)
-    &:nth-child(even) {
+    &.reverse {
       flex-direction: row-reverse;
 
-      @include small-tablet {
+      @include maxdesktop {
         flex-direction: column;
       }
     }
   }
 
-  // .internalArticle__cardleft — в разметке класс с маленькой l
   &__cardleft {
     display: flex;
     align-items: center;
     justify-content: center;
     width: calc(50% - 15px);
-    padding: 24px;
     border: 1px solid #e8e8e8;
     border-radius: 24px;
 
-    @include small-tablet {
+    @include maxdesktop {
+      height: 368px;
       width: 100%;
     }
 
     img {
       display: block;
-      max-width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: contain;
     }
   }
 
   &__cardRight {
     width: calc(50% - 15px);
-    padding: 0 40px;
+    padding: 16px 40px 16px;
     border: 1px solid #e8e8e8;
     border-radius: 24px;
 
-    @include small-tablet {
+    @include maxdesktop {
       width: 100%;
-      padding: 0;
+    }
+
+    @include small-tablet {
+      padding: 0 20px;
       border: none;
     }
   }
@@ -156,7 +156,7 @@
     display: flex;
     align-items: flex-start;
     gap: 20px;
-    padding: 28px 0;
+    padding: 24px 0;
 
     &:not(:last-child) {
       border-bottom: 1px solid #e8e8e8;
@@ -164,8 +164,7 @@
 
     @include mobile {
       flex-direction: column;
-      gap: 12px;
-      padding: 20px 0;
+      gap: 16px;
     }
   }
 
@@ -174,46 +173,60 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background-color: var(--red);
+    border-radius: 22px;
+    width: 44px;
+    height: 44px;
+    background: #c8102e;
 
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    font-size: 14px;
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 122%;
     color: var(--white);
 
     @include mobile {
       width: 40px;
       height: 40px;
-      font-size: 18px;
+      font-size: 16px;
     }
   }
 
-  // .internalarticle__interiorCardRight — в разметке блок с маленькой буквы
   &__interiorCard .internalarticle__interiorCardRight {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
+
+    @include mobile {
+      gap: 8px;
+    }
 
     h3 {
-      font-family: "Montserrat", sans-serif;
-      font-weight: 700;
-      font-size: 18px;
-      color: var(--dark-grey);
+      font-family: "Bounded", sans-serif;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 127%;
+      color: #111827;
 
       @include mobile {
-        font-size: 16px;
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 133%;
+        color: #111827;
       }
     }
 
     p {
       font-family: "Montserrat", sans-serif;
       font-weight: 400;
-      font-size: 14px;
-      line-height: 150%;
-      color: var(--medium-grey);
+      font-size: 18px;
+      line-height: 133%;
+      color: #374151;
+
+      @include mobile {
+        font-size: 14px;
+        line-height: 143%;
+      }
     }
   }
 }

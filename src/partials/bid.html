@@ -1,15 +1,17 @@
 <section class="bid">
   <div class="container">
     <div class="bid__wrapp">
-      <iframe
-        class="bid__left"
-        src="https://yandex.ru/map-widget/v1/?ll=73.384529%2C54.982098&z=13.44"
-        width="560"
-        height="400"
-        frameborder="1"
-        allowfullscreen="true"
-        style="position: relative"
-      ></iframe>
+      <div class="bid__map" id="map">
+        <div class="bid__overlay"></div>
+        <iframe
+          class="bid__left"
+          src="https://yandex.ru/map-widget/v1/?ll=73.384529%2C54.982098&z=13.44"
+          width="560"
+          height="400"
+          frameborder="1"
+          allowfullscreen="true"
+        ></iframe>
+      </div>
       <div class="bid__right">
         <div class="bid__formTitle">
           <h2>Оставить заявку</h2>

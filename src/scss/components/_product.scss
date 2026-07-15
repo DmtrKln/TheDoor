@@ -13,6 +13,7 @@
 
     @include mobile {
       overflow: auto;
+      padding-bottom: 10px;
       margin-top: 30px;
     }
 
@@ -91,7 +92,8 @@
     cursor: pointer;
     transition: border-color 0.3s ease;
 
-    &:hover {
+    &:hover,
+    &.active {
       border-color: var(--red);
     }
 
@@ -123,6 +125,7 @@
     object-fit: cover;
     border: 1px solid #e8e8e8;
     border-radius: 16px;
+    cursor: pointer;
   }
 
   &__scrollbar.swiper-scrollbar {
@@ -146,6 +149,8 @@
     padding-top: 26px;
     gap: 30px;
     flex: 1;
+
+    white-space: nowrap;
 
     @include tablet {
       padding-top: 65px;
@@ -235,6 +240,7 @@
     gap: 8px;
 
     @include tablet {
+      padding-bottom: 10px;
       flex-wrap: nowrap;
       overflow: auto;
     }
@@ -641,7 +647,8 @@
     }
   }
 
-  &__bottom {
+  &__base,
+  &__baseMobile {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -685,6 +692,22 @@
         line-height: 150%;
         color: var(--dark-grey);
       }
+    }
+  }
+
+  &__base {
+    @include tablet {
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__baseMobile {
+    display: none;
+
+    @include tablet {
+      display: flex;
     }
   }
 }
@@ -798,6 +821,10 @@
         background-color: var(--grey);
         color: var(--medium-grey);
         border: 1px solid transparent;
+
+        span {
+          color: var(--medium-grey);
+        }
       }
 
       @include mobile {

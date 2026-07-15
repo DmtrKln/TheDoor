@@ -376,7 +376,7 @@
     height: stretch;
     gap: 24px;
     width: 100%;
-    padding: 32px 25px 40px;
+    padding: 32px 25px 110px;
     background-color: var(--white);
     border-radius: 90px 90px 0 0;
   }
@@ -420,6 +420,8 @@
     gap: 8px;
 
     svg {
+      width: 34px;
+      height: 34px;
       transition: 0.3s all ease;
     }
 
@@ -584,6 +586,7 @@
     line-height: 110%;
     outline: none;
     transition: border-color 0.3s ease;
+    outline: none;
   }
 
   .header__checkbox {
@@ -877,6 +880,7 @@
       border-radius: 8px;
       background-color: var(--white);
       padding: 14px 16px;
+      outline: none;
 
       font-family: "Montserrat", sans-serif;
       font-weight: 400;
@@ -900,6 +904,7 @@
       font-weight: 400;
       font-size: 16px;
       color: #000;
+      outline: none;
 
       padding: 12px 0 20px 16px;
       height: 80px;

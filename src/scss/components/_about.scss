@@ -325,7 +325,7 @@
     display: flex;
     gap: 32px;
 
-    @include tablet {
+    @include maxdesktop {
       flex-direction: column;
       gap: 16px;
     }
@@ -338,7 +338,7 @@
     width: calc((100% - 80px) / 3);
     padding: 40px;
 
-    @include tablet {
+    @include maxdesktop {
       padding: 24px;
       width: 100%;
     }

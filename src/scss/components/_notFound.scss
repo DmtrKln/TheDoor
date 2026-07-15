@@ -112,7 +112,7 @@
     border-radius: 16px;
     width: fit-content;
     padding: 18px 48px;
-    transform: 0.3s all ease;
+    transition: 0.3s all ease;
     border: 1px solid transparent;
 
     &:hover {

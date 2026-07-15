@@ -141,6 +141,7 @@
     font-size: 16px;
 
     &:nth-child(1) {
+      text-align: center;
       color: var(--white);
       background-color: var(--red);
 
@@ -568,6 +569,10 @@
       width: 100%;
     }
 
+    @include mobile {
+      transform: none;
+    }
+
     &:hover .catalog__arrow {
       border-color: var(--red);
       background: var(--red);
@@ -589,6 +594,7 @@
   &__card {
     width: calc((100% - 24px) / 2);
     aspect-ratio: 16 / 10;
+    transition: 0.3s all ease;
     cursor: pointer;
 
     &:hover .catalog__arrow {
@@ -764,10 +770,14 @@
       font-size: 16px;
       text-decoration: underline dotted;
       text-decoration-skip-ink: none;
+      transition: 0.3s all ease;
       color: var(--medium-grey);
 
       text-decoration-thickness: 2px;
       text-underline-offset: 6px;
+      &:hover {
+        color: var(--red);
+      }
 
       @include mobile {
         display: none;
@@ -857,7 +867,12 @@
     display: flex;
     gap: 12px;
     margin-bottom: 38px;
-    overflow: auto;
+
+    @include mobile {
+      margin-bottom: 28px;
+      overflow: auto;
+      padding-bottom: 10px;
+    }
   }
 
   &__tab {
@@ -901,6 +916,7 @@
     border-radius: 12px;
     gap: 40px;
     width: calc(50% - 16px);
+    cursor: pointer;
 
     &:last-child:nth-child(odd) {
       width: 100%;
@@ -912,6 +928,17 @@
     }
     @include tablet {
       width: 100%;
+    }
+
+    &:hover .project__btn {
+      background-color: var(--white);
+      border-color: var(--red);
+      color: var(--red);
+    }
+    &:active .project__btn {
+      border-color: transparent;
+      background-color: var(--grey);
+      color: var(--white);
     }
   }
 
@@ -1014,40 +1041,30 @@
       background: #f3f4f6;
       border-radius: 6px;
     }
+  }
 
-    a {
-      font-family: "Montserrat", sans-serif;
-      font-weight: 600;
-      font-size: 14px;
-      color: var(--white);
+  &__btn {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--white);
 
-      padding: 10px 16px;
-      background: var(--red);
-      border-radius: 16px;
-      transition: 0.3s all ease;
-      border: 1px solid transparent;
-
-      &:hover {
-        background-color: var(--white);
-        border-color: var(--red);
-        color: var(--red);
-      }
-
-      &:active {
-        border-color: transparent;
-        background-color: var(--grey);
-        color: var(--white);
-      }
-    }
+    padding: 10px 16px;
+    background: var(--red);
+    border-radius: 16px;
+    transition: 0.3s all ease;
+    border: 1px solid transparent;
+    cursor: pointer;
   }
 
   //нижняя половина
 
-  &__calc {
+  &__calcDesc {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 22px;
+    margin-top: 24px;
+
     gap: 16px;
 
     border-radius: 12px;
@@ -1055,14 +1072,14 @@
     padding: 32px 40px;
 
     @include tablet {
-      gap: 20px;
       flex-wrap: wrap;
       justify-content: center;
+
+      gap: 20px;
     }
 
     @include mobile {
       padding: 24px;
-      gap: 10px;
     }
 
     p {
@@ -1087,6 +1104,10 @@
       background: var(--red);
       padding: 18px 32px;
       border-radius: 8px;
+
+      @include tablet {
+        width: 100%;
+      }
 
       @include mobile {
         font-size: 14px;
